@@ -6,7 +6,8 @@ import ProcessFlow from "./ProcessFlow";
 import ArchitectureProjects from "./ArchitectureProjects";
 import InteriorProjects from "./InteriorProjects";
 import ConstructionVisit from "./ConstructionVisit";
-import VideoReview from "./VideoReview";
+import VideoReviewSection from "./VideoReviewSection";
+import VideoReviewBeforeForm from "./VideoReviewBeforeForm";
 import RegisterSection from "./RegisterSection";
 
 import AboutUs from "./AboutUs";
@@ -66,7 +67,7 @@ function Home() {
       </Dialog>
 
       {/* Main Content in requested order */}
-      <VideoReview />
+      <VideoReviewSection />
       <CustomerFeedback />
       <section id="process">
         <ProcessFlow />
@@ -82,6 +83,7 @@ function Home() {
       </section>
       <BenefitsSection />
       <AboutUs />
+      <VideoReviewBeforeForm />
       <RegisterSection />
 
       {/* Social Buttons */}
