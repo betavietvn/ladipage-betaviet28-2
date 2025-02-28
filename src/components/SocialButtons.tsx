@@ -97,52 +97,28 @@ export default function SocialButtons() {
   ];
 
   if (isMobile) {
-    return (
-      <>
-        <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-50 lg:hidden">
-          <div className="flex justify-between items-center px-2 py-2">
-            {socialButtons.map((button, index) => (
-              <div key={index} className="flex flex-col items-center space-y-1">
-                {button.onClick ? (
-                  <button onClick={button.onClick} className="w-10 h-10">
-                    <img
-                      src={button.icon}
-                      alt={button.alt}
-                      className="w-full h-full"
-                    />
-                  </button>
-                ) : (
-                  <a href={button.href} className="w-10 h-10">
-                    <img
-                      src={button.icon}
-                      alt={button.alt}
-                      className="w-full h-full"
-                    />
-                  </a>
-                )}
-                <span className="text-xs">{button.alt}</span>
-              </div>
-            ))}
-          </div>
-        </div>
+    // Filter out the contact form button for mobile
+    const mobileButtons = socialButtons.filter(
+      (button) => button.alt !== "Contact Form",
+    );
 
-        <Dialog open={contactFormOpen} onOpenChange={setContactFormOpen}>
-          <DialogContent className="sm:max-w-[500px] p-6">
-            <div className="flex justify-between items-center mb-4">
-              <h2 className="text-2xl font-bold text-[#B87B44]">
-                ĐĂNG KÝ NHẬN ƯU ĐÃI
-              </h2>
-              <button
-                onClick={() => setContactFormOpen(false)}
-                className="text-gray-500 hover:text-gray-700"
-              >
-                <X size={20} />
-              </button>
+    return (
+      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-50 lg:hidden">
+        <div className="flex justify-between items-center px-2 py-2">
+          {mobileButtons.map((button, index) => (
+            <div key={index} className="flex flex-col items-center space-y-1">
+              <a href={button.href} className="w-10 h-10">
+                <img
+                  src={button.icon}
+                  alt={button.alt}
+                  className="w-full h-full"
+                />
+              </a>
+              <span className="text-xs">{button.alt}</span>
             </div>
-            <ContactForm />
-          </DialogContent>
-        </Dialog>
-      </>
+          ))}
+        </div>
+      </div>
     );
   }
 
