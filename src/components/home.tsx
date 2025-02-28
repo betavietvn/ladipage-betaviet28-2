@@ -34,7 +34,9 @@ function Home() {
         </div>
         <div className="lg:hidden py-8 bg-[#B87B44]/10">
           <div className="container mx-auto px-4">
-            <ContactForm />
+            <div className="max-w-md mx-auto">
+              <ContactForm />
+            </div>
           </div>
         </div>
       </div>
