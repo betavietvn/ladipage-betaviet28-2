@@ -8,7 +8,7 @@ import InteriorProjects from "./InteriorProjects";
 import ConstructionVisit from "./ConstructionVisit";
 import VideoReview from "./VideoReview";
 import RegisterSection from "./RegisterSection";
-import WhyChooseBetaviet from "./WhyChooseBetaviet";
+
 import AboutUs from "./AboutUs";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
@@ -66,7 +66,7 @@ function Home() {
       </Dialog>
 
       {/* Main Content in requested order */}
-      <WhyChooseBetaviet />
+      <VideoReview />
       <CustomerFeedback />
       <section id="process">
         <ProcessFlow />
@@ -81,9 +81,6 @@ function Home() {
         <ConstructionVisit />
       </section>
       <BenefitsSection />
-      <section id="video">
-        <VideoReview />
-      </section>
       <AboutUs />
       <RegisterSection />
 
